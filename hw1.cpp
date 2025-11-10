@@ -1,24 +1,22 @@
-```cpp
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    int score1, score2, score3;
-    cout << "輸入三次成績要用空格分開";
-    cin >> score1 >> score2 >> score3;
+    int number;
+    float grade[5][5] = {
+        {1, 90, 80, 90, 86.7},
+        {2, 99, 70, 85, 84.7},
+        {3, 77, 65, 57, 66.3},
+        {4, 61, 87, 88, 78.7},
+        {5, 50, 65, 77, 64}
+    };
 
-    double average = (score1 + score2 + score3) / 3;
-    bool hasBelow40 = (score1 < 40) || (score2 < 40) || (score3 < 40);
+    cout << "請輸入座號以查詢成績：";
+    cin >> number;
+    cout << number << "號同學的各科成績為：" << endl;
+    cout << "國文\t英文\t數學\t自然" << endl;
 
-    if (hasBelow40) {
-        cout << "此學科不及格";
-    } else if (average >= 60) {
-        cout << "此學科通過";
-    } else {
-        cout << "此學科不及格";
-    }
-
-    return 0;
+    for (int j = 1; j < 5; j++)
+        cout << " " << grade[number - 1][j] << '\t';
 }
-```
